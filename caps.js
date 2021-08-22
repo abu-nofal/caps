@@ -6,14 +6,21 @@ require('dotenv').config()
 require('./vendor/index')
 // require('./driver/index')
 
-let payload={
-    store: process.env.STORE,
-    orderID:faker.datatype.uuid() ,
-    customer: faker.name.findName(),
-    address: faker.address.streetAddress()
-}
+
 // console.log(payload['orderID'])
 
-setTimeout(()=>{
-    events.emit('pickup',payload)
+class payload{
+    constructor(){
+        this.store= process.env.STORE;
+        this.orderID=faker.datatype.uuid() ;
+        this.customer= faker.name.findName();
+        this.address= faker.address.streetAddress()
+    }
+}
+setInterval(()=>{
+    let newPaload=new payload
+    events.emit('pickup',newPaload)
 },5000)
+
+// if we want one time we can use setTimeOut 
+
