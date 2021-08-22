@@ -3,12 +3,12 @@
 require('../driver/index')
 const events = require('../events');
 
-events.on('pick',pickedUp)
+events.on('pickup',pickedUp)
 events.on('delivered',delivered)
 function pickedUp(payload){
     let order={
         event:'pickup',
-        time:new Date().toISOString(),
+        time:new Date(),
         payload
     }
     console.log('Event', order)
@@ -20,7 +20,7 @@ function pickedUp(payload){
 function delivered(payload){
     let order={
         event:'delivered',
-        time:new Date().toISOString(),
+        time:new Date(),
         payload
     }
     console.log('Event', order)

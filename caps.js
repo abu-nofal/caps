@@ -15,5 +15,5 @@ let payload={
 // console.log(payload['orderID'])
 
 setTimeout(()=>{
-    events.emit('pick',payload)
+    events.emit('pickup',payload)
 },5000)

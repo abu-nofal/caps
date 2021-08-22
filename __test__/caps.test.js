@@ -20,12 +20,11 @@ describe('caps ', () => {
   beforeEach(() => {
      consoleSpy = jest.spyOn(console, 'log').mockImplementation();
   });
-//   afterEach(() => {
-//     consoleSpy.mockRestore();
-//   });
+
 
   test('test pick  ',  async() => {
      event.emit('pick', payload);
+    
      await expect(consoleSpy).toHaveBeenCalled();
   });
 
@@ -37,7 +36,7 @@ describe('caps ', () => {
 
   test('test delivered  ',async () => {
     event.emit('delivered', payload);
-
+    
     await  expect(consoleSpy).toHaveBeenCalled();
   });
 });
