@@ -8,7 +8,7 @@ function Intransit(payload){
 
     let order={
         event:'In-transi',
-        time:new Date().toISOString(),
+        time:new Date(),
         payload
     }
     console.log('Event', order)
