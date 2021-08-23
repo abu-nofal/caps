@@ -1,28 +1,13 @@
 'use strict';
 
-require('../driver/index')
-const events = require('../events');
 
-events.on('pickup',pickedUp)
-events.on('delivered',delivered)
-function pickedUp(payload){
-    let order={
-        event:'pickup',
-        time:new Date(),
-        payload
-    }
-    console.log('Event', order)
-    
-    events.emit('InTransi',payload)
-}
+const io =require('socket.io-client')
+const host ='http://localhost:8080/caps'
+const capsConnection= io.connect(host)
 
 
+capsConnection.on('deliveredV',delivered)
 function delivered(payload){
-    let order={
-        event:'delivered',
-        time:new Date(),
-        payload
-    }
-    console.log('Event', order)
-console.log('thank you')
+   
+    console.log('thank you for delevering ', payload.orderID)
 }
