@@ -7,7 +7,7 @@
 ## Description :
 - create caps-app 
 ## process output
-![](./imges/lab11.png)
+![](./imges/lab12.png)
 
 ## PR Link : PR
 - https://github.com/abu-nofal/caps/pull/1

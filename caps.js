@@ -24,7 +24,7 @@ class payload {
 
 // for caps
 capsSystem.on("connection", (socket) => {
-  
+
     console.log("a new one have connectied to caps route", socket.id);
 
   // pickup 
